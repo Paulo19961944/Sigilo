@@ -1,0 +1,126 @@
+/* Regras comuns a todas as media queries */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    max-width: 100%;
+    height: 100vh;
+    background-color: #eeeeee;
+}
+
+.titulo {
+    text-align: center;
+}
+
+p {
+    margin-top: 1.5em;
+    text-align: justify;
+    font-size: 20px;
+    font-weight: 500;
+    margin-right: 0.8em;
+    margin-left: 0.8em;
+}
+
+#exemplo {
+    margin-top: 4em;
+    margin-bottom: 2.3em;
+    font-weight: 600;
+}
+
+#sigilo-ativar {
+    margin-top: 3em;
+}
+
+#sigilo-criar {
+    margin-top: 4em;
+}
+
+#intento {
+    display: flex;
+    margin-bottom: 2em;
+}
+
+#text-intento {
+    margin: 0;
+    height: 2em;
+    margin-top: 2.2em;
+    width: 70%;
+    background-color: #eeeeee;
+    border-radius: 0.3em;
+    border-color: #404040;
+    font-weight: 600;
+}
+
+#btn {
+    margin-top: 2em;
+    margin-left: 1em;
+    width: 6em;
+    font-size: 16px;
+    border-radius: 0.3em;
+    border-color: #000000;
+    background-color: #1b66c9;
+    color: #eeeeee;
+    font-weight: 600;
+}
+
+#rodape {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#resultado {
+    font-weight: 600;
+}
+
+/* Media query para telas maiores (min-width: 1024px) */
+@media screen and (min-width: 1024px) {
+    #titulo-principal {
+        text-align: center;
+        margin-left: 14em;
+    }
+}
+/* Media query para telas médias (min-width: 768px) */
+@media screen and (min-width: 768px) {
+    #titulo-principal {
+        text-align: center;
+        margin-left: 4em;
+    }
+    #cabecalho {
+        display: flex;
+        text-align: center;
+        margin-bottom: 5em;
+    }
+    #rodape {
+        font-size: 28px;
+    }
+}
+
+/* Media query para telas pequenas (max-width: 425px) */
+@media screen and (max-width: 425px) {
+    img {
+        width: 30%;
+    }
+
+    #titulo-principal {
+        text-align: center;
+        margin-left: 1em;
+    }
+
+    #cabecalho {
+        display: flex;
+        text-align: center;
+        margin-bottom: 5em;
+    }
+
+    #rodape {
+        font-size: 24px;
+    }
+
+    #resultado {
+        margin-top: 2em;
+    }
+}
