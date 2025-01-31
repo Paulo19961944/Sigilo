@@ -1,126 +1,207 @@
 /* Regras comuns a todas as media queries */
 * {
+    /* Remove o padding e margin de todos os elementos */
     padding: 0;
     margin: 0;
+    /* Define a fonte padrão para o site */
     font-family: 'Open Sans', sans-serif;
 }
 
 body {
+    /* Utiliza o Flexbox para centralizar os itens vertical e horizontalmente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Garante que o corpo ocupe toda a largura e altura */
     max-width: 100%;
-    height: 100vh;
-    background-color: #eeeeee;
+    min-height: 100vh;
+    /* Define a cor de fundo */
+    background-color: #f3f3f3;
+}
+
+header {
+    /* Adiciona padding ao header */
+    padding: 32px 0;
+    /* Usa Flexbox para alinhar os itens */
+    display: flex;
+    align-items: center;
+}
+
+header > div#cabecalho{
+    /* Define a largura e o layout flexível para o cabeçalho */
+    width: 80vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header > div#cabecalho > img{
+    /* Define a largura da imagem do cabeçalho */
+    width: 200px;
 }
 
 .titulo {
+    /* Centraliza o texto */
     text-align: center;
 }
 
-p {
-    margin-top: 1.5em;
-    text-align: justify;
-    font-size: 20px;
-    font-weight: 500;
-    margin-right: 0.8em;
-    margin-left: 0.8em;
+section{
+    /* Define a largura das seções */
+    width: 80vw;
 }
 
-#exemplo {
-    margin-top: 4em;
-    margin-bottom: 2.3em;
+section > h2.titulo{
+    /* Adiciona margem acima e abaixo do título */
+    margin: 64px 0;
+}
+
+section > p{
+    /* Define o tamanho da fonte e a margem para os parágrafos */
+    font-size: 1.125rem;
+    margin: 32px 0;
+}
+
+section > p#exemplo{
+    /* Define um estilo específico para o parágrafo com id "exemplo" */
+    margin: 64px 0;
+    font-size: 1.5rem;
+    text-align: center;
     font-weight: 600;
 }
 
-#sigilo-ativar {
-    margin-top: 3em;
-}
-
-#sigilo-criar {
-    margin-top: 4em;
-}
-
-#intento {
+section > div#intento{
+    /* Usa Flexbox para alinhar os itens dentro do div#intento */
     display: flex;
-    margin-bottom: 2em;
+    align-items: center;
 }
 
-#text-intento {
-    margin: 0;
-    height: 2em;
-    margin-top: 2.2em;
-    width: 70%;
-    background-color: #eeeeee;
-    border-radius: 0.3em;
-    border-color: #404040;
+section > div#intento > p{
+    /* Define o tamanho da fonte para o parágrafo dentro do div#intento */
+    font-size: 1.125rem;
+}
+
+section > h2#sigilo-criar{
+    /* Define margens para o título com id "sigilo-criar" */
+    margin: 64px 0 48px;
+}
+
+section > div#intento > input#text-intento{
+    /* Estiliza o campo de input dentro do div#intento */
+    border-radius: 4px;
+    outline: none;
+    padding: 0 12px;
+    border: 1px solid #727272;
+    background-color: #f3f3f3;
+    margin-left: 8px;
+    flex: 1;
+    height: 32px;
+}
+
+section > div#intento > input#text-intento:focus{
+    /* Modifica a borda do input quando ele está em foco */
+    border: 1px solid #2b6Cb0;
+}
+
+section > button#btn{
+    /* Estiliza o botão */
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: #2b6Cb0;
+    color: #f3f3f3;
+    width: 120px;
+    height: 32px;
+    margin: 48px 0 24px;
+}
+
+section > button#btn:hover{
+    /* Adiciona animação ao botão quando ele é hoverizado */
+    animation: pulse 1.5s ease-in-out infinite;   
+}
+
+footer{
+    /* Estiliza o rodapé com borda superior, margens e alinhamento */
+    border-top: 1px solid #727272;
+    margin-top: 64px;
+    width: 100%;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer > p#rodape{
+    /* Estiliza o texto do rodapé */
+    font-size: 1.5rem;
     font-weight: 600;
 }
 
-#btn {
-    margin-top: 2em;
-    margin-left: 1em;
-    width: 6em;
-    font-size: 16px;
-    border-radius: 0.3em;
-    border-color: #000000;
-    background-color: #1b66c9;
-    color: #eeeeee;
-    font-weight: 600;
-}
+/* Media query para telas com largura máxima de 1024px */
+@media(max-width: 1024px){
+    header > div#cabecalho > img{
+        /* Reduz o tamanho da imagem no cabeçalho para telas menores */
+        width: 144px;
+    }
 
-#rodape {
-    text-align: center;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-#resultado {
-    font-weight: 600;
-}
-
-/* Media query para telas maiores (min-width: 1024px) */
-@media screen and (min-width: 1024px) {
-    h2#titulo-principal {
-        text-align: center;
-        margin-left: 14em;
+    footer{
+        /* Aumenta a altura do rodapé para telas menores */
+        height: 144px;
     }
 }
-/* Media query para telas médias (min-width: 768px) */
-@media screen and (min-width: 768px) {
-    #titulo-principal {
-        text-align: center;
-        margin-left: 4em;
-    }
-    #cabecalho {
+
+/* Media query para telas com largura máxima de 767px */
+@media(max-width: 767px){
+    header > div#cabecalho{
+        /* Ajusta o layout do cabeçalho para telas menores */
+        width: 85vw;
         display: flex;
-        text-align: center;
-        margin-bottom: 5em;
+        flex-direction: column;
+        gap: 32px;
     }
-    #rodape {
-        font-size: 28px;
+
+    header > div#cabecalho > h1#titulo-principal{
+        /* Reduz o tamanho da fonte do título principal */
+        font-size: 1.25rem;
+    }
+
+    header > div#cabecalho > img{
+        /* Reduz a largura da imagem do cabeçalho para telas menores */
+        width: 120px;
+    }
+
+    section{
+        /* Ajusta a largura das seções para telas menores */
+        width: 85vw;
+    }
+
+    section > h2.titulo, section > p#exemplo{
+        /* Ajusta o tamanho da fonte para o título e parágrafo "exemplo" */
+        font-size: 1.25rem;
+    }
+
+    section > p, section > div#intento > p, section > div#intento > input#text-intento, section > button#btn{
+        /* Ajusta o tamanho da fonte de vários elementos para telas menores */
+        font-size: 0.885rem;
+    }
+
+    footer > p#rodape{
+        /* Ajusta o tamanho da fonte do rodapé para telas menores */
+        font-size: 1.25rem;
     }
 }
 
-/* Media query para telas pequenas (max-width: 425px) */
-@media screen and (max-width: 425px) {
-    img {
-        width: 30%;
+/* Animação de pulso para o botão */
+@keyframes pulse{
+    0%{
+        transform: scale(1);
     }
 
-    #titulo-principal {
-        text-align: center;
-        margin-left: 1em;
+    50%{
+        transform: scale(1.03);
     }
 
-    #cabecalho {
-        display: flex;
-        text-align: center;
-        margin-bottom: 5em;
-    }
-
-    #rodape {
-        font-size: 24px;
-    }
-
-    #resultado {
-        margin-top: 2em;
+    100%{
+        transform: scale(1);
     }
 }
